@@ -1,0 +1,38 @@
+﻿<!-- PROGRESS BAR DIALOG WINDOW -->
+<!--  Author:     Garison E Piatt           -->
+<!--  Contact:    web@garisonwebdesign.com  -->
+<!--  created:    11/25/14                  -->
+<!--  Version:    1.0.0                     -->
+<!-- This definition describes the popup for the progress bar.  It is defined with NO window style  -->
+<!-- because that is the simplest way to eliminate the default CLOE button using WPF.  We don't     -->
+<!-- the close button to appear because we believe that a proper interface should be devoid of non- -->
+<!-- working elements.  Removing the close button is not simple with WPF.  Instead, a header line   -->
+<!-- is created which is bound to the title, and given a background color to offset it.  A text     -->
+<!-- block is also provided wich ouses the current percentage value, and is bound to the progress   -->
+<!-- so the value is displayed over the bar with each update.                                       -->
+
+<Window x:Class="progressBar.ProgressDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Progress"
+        ContentRendered="initBackgroundWorker"
+        Height="100" Width="350" MinHeight="100" MinWidth="350" ResizeMode="NoResize" 
+        WindowStyle="None" Background="#FFFFFFFF" BorderBrush="#FF767575" BorderThickness="2">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="pbHeader" Margin="0,0" Padding="5,0" Grid.Row="0" Grid.Column="0"
+                   Text="{Binding Title,RelativeSource={RelativeSource FindAncestor,AncestorType=Window}}" 
+                   FontSize="15" FontWeight="Bold" Foreground="#FF5A5A5A" Background="LightGray">
+        </TextBlock>
+        <TextBlock x:Name="pbMessage" Text="Pending..." Margin="5,0" Padding="0" Grid.Row="1" Grid.Column="0" />
+        <ProgressBar Name="pbStatus" Grid.Row="3" Grid.Column="0" Height="20" Width="290" Maximum="100" Value="0" />
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding ElementName=pbStatus, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>
