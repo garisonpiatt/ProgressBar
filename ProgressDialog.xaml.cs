@@ -5,8 +5,8 @@
 **  Created:    11/25/14
 **  Version:    1.0.0
 **
-** This module presents a self-contained progree bar dialog box for WPF applications.  As such, it does not
-** contain any code specific to the bakcground process it represents.  Only the code which actually displays
+** This module presents a self-contained progress bar dialog box for WPF applications.  As such, it does not
+** contain any code specific to the background process it represents.  Only the code which actually displays
 ** and updates the progress bar is here.  For this reason, it can be used for multiple purposes in the same
 ** application without conflict.  Hooks are provided to access application methods in response to progress
 ** bar events.
