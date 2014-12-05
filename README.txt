@@ -5,9 +5,14 @@
  Created:    11/25/14
  Version:    1.0.0
 
-This is a self-contained progree bar dialog box for WPF applications.  It does not contain any code specific to the bakcground process it represents.  Only the code which actually displays and updates the progress bar is here.  For this reason, it can be used for multiple purposes in the same application without conflict.  Hooks are provided to access application methods in response to progress bar events.
+This is a self-contained progress bar dialog box for WPF applications.  It does not contain any code specific
+to the background process it represents.  Only the code which actually displays and updates the progress bar
+is here.  For this reason, it can be used for multiple purposes in the same application without conflict.  
+Hooks are provided to access application methods in response to progress bar events.
 
-Currently, the progress bar DOES NOT support cancelation.  It is assumed that the purpose of this window is to display the current progress of an operation which cannot be interrupted.  This features is left to the wiles of the next programmer, if such a thing is needed.
+Currently, the progress bar DOES NOT support cancelation.  It is assumed that the purpose of this window is to
+display the current progress of an operation which cannot be interrupted.  This feature is left to the wiles 
+of the next programmer, if such a thing is needed.
 
 
 Implement as follows:
@@ -22,12 +27,12 @@ Place this inside the class definition:
 
 In the constructor or initialize section of this file place this code:
 	//Include and initalize the Progress Bar Dialog box.  The ShowDialog call starts the bar automatically.
-	 pb = new ProgressDialog();	   	         // Create the progress bar dialog box
-	 pb.SetProgressOptions(false, true);	            // Set cancellation, report-progress states (opt)
-	 pb.AddDoWorkHandler(bwDoWork);	   	     // Add the application Do-Work handler (required)
-	 pb.AddProgressChangedHandler(bwProgressChanged);        // Add the Progress-Changed handler (if needed)
-	 pb.AddProgressCompletedHandler(bwProgressConpleted);    // Add the Progress-Completed handler (if needed)
-	 pb.ShowDialog();	   	   	       // Open the dialog box and start the progress bar
+	pb = new ProgressDialog();	   	                // Create the progress bar dialog box
+	pb.SetProgressOptions(false, true);	                // Set cancellation, report-progress states (opt)
+	pb.AddDoWorkHandler(bwDoWork);	   	                // Add the application Do-Work handler (required)
+	pb.AddProgressChangedHandler(bwProgressChanged);        // Add the Progress-Changed handler (if needed)
+	pb.AddProgressCompletedHandler(bwProgressConpleted);    // Add the Progress-Completed handler (if needed)
+	pb.ShowDialog();	   	   	                // Open the dialog box and start the progress bar
 
 Create a Do-Work function with the following code.  Change the flow and messages as required.
 	void bwDoWork(object sender, DoWorkEventArgs e) {
