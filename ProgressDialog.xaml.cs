@@ -247,3 +247,19 @@ namespace progressBar {
         }
     } // end class ProgressDialog
 } // end namespace progressBar
+
+/*End-User License
+**
+** Permission is granted to use this package in any endeavor, personal or commercial, PROVIDED
+** ALL ATTRIBUTIONS REMAIN.  Full credit for developing and maintaining this code must be given
+** to me, and my name and contact information must remain in all relevant files.
+**
+** Payment for this pakage is not required, but donations to makahou@garisonpiatt.com will be
+** gratefully accepted.
+**
+** Please notify me of any modifications or upgrades made to this package; suitable changes will be
+** incorporated into the next update, with proper attributions applied (you get credit for your work).
+**
+** Garison Piatt
+** web@garisonwebdesign.com
+*/
